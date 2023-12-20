@@ -1,27 +1,27 @@
-#Automated QA Engineer Project
+<h1>Automated QA Engineer Project</h1>
 
-##Overview
-This repository contains the automated testing framework for a ASP.NET Core web application. The purpose of this framework is to assess and automate the testing of critical functionalities within the Partner Portal. The testing is done using Gherkin scenarios, C# programming language, and the Selenium framework.
+<h2>Overview</h2>
+This repository contains the automated testing framework for a ASP.NET Core web application. The purpose of this framework is to assess and automate the testing of critical functionalities within the Partner Portal. The testing is done using Gherkin scenarios, C# programming language, and the Selenium and Specflow frameworks.
 
-#1. Testing Frameworks and Tools
+<h3>1. Testing Frameworks and Tools</h3>
 Selenium with C#: Selenium is chosen for its widespread use in web automation, and C# is selected for its object-oriented nature, especially suitable for ASP.NET Core applications.
 
 SpecFlow: A Behavior-Driven Development (BDD) framework for .NET that integrates seamlessly with the Gherkin language.
 
-#2. Project Structure and Architecture
+<h3>2. Project Structure and Architecture</h3>
 The project is organized into folders for features, step definitions, and utility classes, ensuring a clean and maintainable structure.
 
-#3. Requirements
+<h3>3. Requirements</h3>
 3.1 Identify Critical Functionalities and Create Test Cases:
+
+```
 Feature: Login
 
-gherkin
-Copy code
 @Smoke
 Scenario: User shall be able to submit the login form with the correct credentials
   Given the login page is displayed
-  And the correct user "janamiranda@live.com" is entered into the username field
-  And the correct password "Abcd123*" is entered into the password field
+  And the correct user "****" is entered into the username field
+  And the correct password "****" is entered into the password field
   When the user invokes the login action
   Then the login is logged in successfully
 
@@ -31,10 +31,11 @@ Scenario: User cannot submit the login form with the wrong credentials
   And the password "password" is entered into the password field
   When the user invokes the login action
   Then the message "Invalid username or password" is displayed
-Feature: Order Submission
+```
 
-gherkin
-Copy code
+```
+Feature: Order
+
 Scenario: Submitting an order successfully
   Given the login page is displayed
   When the user navigates to the order submission page
@@ -49,10 +50,11 @@ Scenario: Looking up the status of a submitted order
   And they enter the order ID
   Then they should see the current status of the order
   And relevant details about the order should be displayed
+```
+
+```
 Feature: Order Validation
 
-gherkin
-Copy code
 Scenario: Submitting an order with invalid details
   Given the login page is displayed
   When the user navigates to the order submission page
@@ -60,10 +62,11 @@ Scenario: Submitting an order with invalid details
   And they submit the order
   Then they should see error messages indicating the validation issues
   And the order should not be processed or stored in the system
+```
+
+```
 Feature: Change Request Submission
 
-gherkin
-Copy code
 Scenario: Submitting a change request successfully
   Given the login page is displayed
   When the user navigates to the change request submission page
@@ -72,8 +75,9 @@ Scenario: Submitting a change request successfully
   And they submit the change request
   Then they should see a success message
   And the change request should be associated with the original order
+```
 
-#4. Write Automation
+<h3>4. Write Automation</h3>
 
 * Page Object Model: Implementation initiated to enhance modularity, creating separate classes for each page, making tests more modular and maintainable.
 
@@ -83,16 +87,18 @@ Scenario: Submitting a change request successfully
 
 * BDD: Agile software development approach incorporated by implementing Feature Files, Gherkin, Step Definitions, and Hooks.
 
-#5. Set Up Test Environment
-Install Visual Studio
-Set Up Selenium:
-Install ChromeDriver, a separate executable used by Selenium WebDriver to control Chrome: ChromeDriver Downloads.
-Configure startup with ChromeDriver.
-Include PATH environment variable.
-WebDriver Setup.
+<h3>5. Set Up Test Environment</h3>
 
-#6. Install Dependencies and Packages
+* Install Visual Studio
+* Set Up Selenium:
+* Install ChromeDriver, a separate executable used by Selenium WebDriver to control Chrome: ChromeDriver Downloads.
+* Configure startup with ChromeDriver.
+* Include PATH environment variable.
+* WebDriver Setup.
 
+<h3>6. Install Dependencies and Packages</h3>
+
+```
 dotnet add package SpecFlow
 dotnet add package SpecFlow.Tools.MsBuild.Generation
 dotnet add package SpecFlow.NUnit
@@ -107,3 +113,4 @@ dotnet add package SeleniumExtras.WaitHelpers
 dotnet add package Microsoft.Extensions.DependencyInjection
 dotnet add package NLog
 dotnet add package Microsoft.Net.Test.sdk
+```
