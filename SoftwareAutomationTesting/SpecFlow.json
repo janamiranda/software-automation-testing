@@ -1,0 +1,5 @@
+﻿{
+  "allowDebugGeneratedFiles": true,
+  "generationMode": "OutOfProcess",
+  "traceLevel": "verbose"
+}

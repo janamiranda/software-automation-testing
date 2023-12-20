@@ -1,0 +1,8 @@
+﻿<specFlow>
+	<stepAssemblies>
+		<stepAssembly assembly="SoftwareAutomationTesting" />
+	</stepAssemblies>
+	<hooks>
+		<hook assembly="SoftwareAutomationTesting" type="SoftwareAutomationTesting.Startup" method="ConfigureServices" />
+	</hooks>
+</specFlow>
