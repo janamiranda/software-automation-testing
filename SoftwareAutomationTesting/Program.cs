@@ -1,6 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
-using OpenQA.Selenium;
-
 namespace SoftwareAutomationTesting
 {
     public class Program

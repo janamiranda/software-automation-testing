@@ -8,13 +8,13 @@ namespace SoftwareAutomationTesting.Steps
     [Binding]
     public class LoginSteps
     {
-        private readonly IWebDriver driver;
+        private readonly IWebDriver _webDriver;
         private readonly NavigationHelper _navigationHelper;
         private readonly LoginPage _loginPage;
 
-        public LoginSteps(IWebDriver driver, NavigationHelper navigationHelper, LoginPage loginPage)
+        public LoginSteps(IWebDriver webDriver, NavigationHelper navigationHelper, LoginPage loginPage)
         {
-            this.driver = driver;
+            _webDriver = webDriver;
             _navigationHelper = navigationHelper;
             _loginPage = loginPage;
         }
@@ -22,7 +22,7 @@ namespace SoftwareAutomationTesting.Steps
         [Given(@"the login page is displayed")]
         public void GivenTheLoginPageIsDisplayed()
         {
-            _navigationHelper.GoToLoginPage(driver);
+            _navigationHelper.GoToLoginPage(_webDriver);
         }
 
         [Given(@"the user ""(.*)"" is entered into the username field")]

@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using NLog;
 using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace SoftwareAutomationTesting.Pages
 {
@@ -18,7 +19,7 @@ namespace SoftwareAutomationTesting.Pages
         // Constructor to initialize the LoginPage with a WebDriver instance
         public LoginPage(IWebDriver driver)
         {
-            this.driver = driver;
+            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         // Properties to represent various elements on the login page
